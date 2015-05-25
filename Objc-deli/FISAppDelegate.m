@@ -44,64 +44,46 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-//-(NSString *)badgeMaker:(NSString *)attendee {
-//    NSString *badge = [NSString stringWithFormat:@"Hello, my name is %@.", attendee];
-//    return badge;
-//}
-
-//- (instancetype)initWithName:(NSString *)name WeightInPounds:(NSNumber *)weight HeightInInches:(NSNumber *)height SenseOfHumor:(NSString *)senseOfHumor
-//{
-//    self = [super init];
-//
-//    if (self)
-//    {
-//        _name = name;
-//        _weight = weight;
-//        _height = height;
-//        _senseOfHumor = senseOfHumor;
-//        _arms = 2;
-//        _legs = 2;
-//    }
-//
-//    return self;
-//}
-
 -(NSMutableArray *)takeANumberWithDeliLine:(NSMutableArray *)deliLine Name:(NSString *)nextCustomer {
     NSMutableArray *newLine = deliLine;
     [newLine addObject:nextCustomer];
     NSString *customerPositionInLine;
-    int *lineNumber = [newLine count];
+    NSUInteger lineNumber = [newLine count];
     
-    customerPositionInLine = [NSString stringWithFormat:@"Hello, %@! You are number %i in line.", nextCustomer, lineNumber];
+    customerPositionInLine = [NSString stringWithFormat:@"Hello, %@! You are number %lu in line.", nextCustomer, (unsigned long)lineNumber];
     NSLog(@"%@", customerPositionInLine);
     
     return newLine;
     
 }
 
-
-
 -(NSMutableArray *)nowServingWithDeliLine:(NSMutableArray *)deliLine {
     NSString *emptyLine = @"There is nobody waiting to be served!";
     if ([deliLine count] == 0) {
-        NSLog(emptyLine);
+        NSLog(@"%@", emptyLine);
     }
     else {
         NSString *nextPerson = [deliLine objectAtIndex:0];
         NSString *nextInLine = [NSString stringWithFormat:@"Now serving %@", nextPerson];
-        NSLog(nextInLine);
+        NSLog(@"%@",nextInLine);
         [deliLine removeObjectAtIndex:0];
     }
     return deliLine;
 }
 
 -(NSString *)deliLine:(NSMutableArray *)currentLine {
-    NSString *placeholderString;
     if ([currentLine count] == 0) {
         return @"The line is empty";
     }
     else {
-        return placeholderString;
+        NSString *listOfCustomersInLine = @"The line is currently: ";
+        NSInteger customerPostion = 1;
+        for (NSString *currentCustomer in currentLine) {
+            listOfCustomersInLine = [listOfCustomersInLine stringByAppendingString:[NSString stringWithFormat:@"%ld. %@ ", (long)customerPostion, currentCustomer]];
+            customerPostion++;
+        }
+        NSString *finalList = [listOfCustomersInLine substringToIndex:[listOfCustomersInLine length] - 1];
+        return [NSString stringWithFormat:@"%@", finalList];
     }
     
 }
