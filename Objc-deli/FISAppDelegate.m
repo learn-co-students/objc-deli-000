@@ -85,16 +85,25 @@
     NSString *emptyLine = @"There is nobody waiting to be served!";
     if ([deliLine count] == 0) {
         NSLog(emptyLine);
-        return deliLine;
     }
     else {
-        return deliLine;
+        NSString *nextPerson = [deliLine objectAtIndex:0];
+        NSString *nextInLine = [NSString stringWithFormat:@"Now serving %@", nextPerson];
+        NSLog(nextInLine);
+        [deliLine removeObjectAtIndex:0];
     }
+    return deliLine;
 }
 
 -(NSString *)deliLine:(NSMutableArray *)currentLine {
     NSString *placeholderString;
-    return placeholderString;
+    if ([currentLine count] == 0) {
+        return @"The line is empty";
+    }
+    else {
+        return placeholderString;
+    }
+    
 }
 
 @end
