@@ -72,7 +72,7 @@
     NSString *customerPositionInLine;
     int *lineNumber = [newLine count];
     
-    customerPositionInLine = [NSString stringWithFormat:@"Hello, %@! You are number %i in line.", nextCustomer, lineNumber +1];
+    customerPositionInLine = [NSString stringWithFormat:@"Hello, %@! You are number %i in line.", nextCustomer, lineNumber];
     NSLog(@"%@", customerPositionInLine);
     
     return newLine;
