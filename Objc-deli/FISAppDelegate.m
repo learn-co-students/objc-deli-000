@@ -15,7 +15,8 @@
     // Override point for customization after application launch.
     return YES;
 }
-							
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -41,6 +42,53 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+//-(NSString *)badgeMaker:(NSString *)attendee {
+//    NSString *badge = [NSString stringWithFormat:@"Hello, my name is %@.", attendee];
+//    return badge;
+//}
+
+//- (instancetype)initWithName:(NSString *)name WeightInPounds:(NSNumber *)weight HeightInInches:(NSNumber *)height SenseOfHumor:(NSString *)senseOfHumor
+//{
+//    self = [super init];
+//
+//    if (self)
+//    {
+//        _name = name;
+//        _weight = weight;
+//        _height = height;
+//        _senseOfHumor = senseOfHumor;
+//        _arms = 2;
+//        _legs = 2;
+//    }
+//
+//    return self;
+//}
+
+-(NSMutableArray *)takeANumberWithDeliLine:(NSMutableArray *)deliLine Name:(NSString *)nextCustomer {
+    NSMutableArray *newLine = deliLine;
+    [newLine addObject:nextCustomer];
+    NSString *customerPositionInLine;
+    int *lineNumber = [newLine count];
+    
+    customerPositionInLine = [NSString stringWithFormat:@"Hello, %@! You are number %i in line.", nextCustomer, lineNumber +1];
+    NSLog(@"%@", customerPositionInLine);
+    
+    return newLine;
+    
+}
+
+
+
+-(NSMutableArray *)nowServingWithDeliLine:(NSMutableArray *)deliLine {
+    NSMutableArray *placeholderArray;
+    return placeholderArray;
+}
+
+-(NSString *)deliLine:(NSMutableArray *)currentLine {
+    NSString *placeholderString;
+    return placeholderString;
 }
 
 @end
