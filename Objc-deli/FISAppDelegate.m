@@ -82,8 +82,14 @@
 
 
 -(NSMutableArray *)nowServingWithDeliLine:(NSMutableArray *)deliLine {
-    NSMutableArray *placeholderArray;
-    return placeholderArray;
+    NSString *emptyLine = @"There is nobody waiting to be served!";
+    if ([deliLine count] == 0) {
+        NSLog(emptyLine);
+        return deliLine;
+    }
+    else {
+        return deliLine;
+    }
 }
 
 -(NSString *)deliLine:(NSMutableArray *)currentLine {
