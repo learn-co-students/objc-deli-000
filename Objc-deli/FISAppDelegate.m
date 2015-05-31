@@ -13,6 +13,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:@"Danny", @"Raf", @"Fernando", nil];
+    
+    [self nowServingWithDeliLine:array];
     return YES;
 }
 							
@@ -41,6 +45,49 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (NSMutableArray *)takeANumberWithDeliLine:(NSMutableArray *)line Name:(NSString *)name{
+    
+    [line addObject:name];
+    NSString *logString;
+    
+    for (NSInteger i = 0; i <[line count]; i++) {
+       logString = [NSString stringWithFormat:@"Hello %@, you are number %ld in line", name, i +1];
+        NSLog(@"%@", logString);
+        
+    }
+    return line;
+}
+
+- (NSMutableArray *)nowServingWithDeliLine:(NSMutableArray *)line{
+    
+    [line removeObject:[line firstObject]];
+    
+    if ([line count] > 0) {
+        return line;
+    }else{
+        
+        NSLog(@"The line is empty!");
+    }
+    
+    return line;
+}
+
+- (NSString *)deliLine:(NSMutableArray *)line{
+    
+    
+    NSString *lineString = @"The line is currently: ";
+    if ([line count] > 0) {
+        NSInteger count = 1;
+        for (NSString *name in line) {
+            lineString = [lineString stringByAppendingString:[NSString stringWithFormat:@"%ld. %@ ", (long)count, name]];
+            count++;
+        }
+        return [NSString stringWithFormat:@"%@", lineString];
+    }
+    return @"The line is empty";
+    
 }
 
 @end
