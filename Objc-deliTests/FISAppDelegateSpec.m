@@ -55,7 +55,7 @@ describe(@"FISAppDelegate", ^{
         it(@"Should respond to the correct selector", ^{
             expect(delegate).to.respondTo(@selector(deliLine:));
         });
-
+//
 //        it(@"Should return the appropriate line", ^{
 //            [deliLine addObject:@"Ada"];
 //            [deliLine addObject:@"Al"];
