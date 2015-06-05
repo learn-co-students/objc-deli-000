@@ -15,7 +15,8 @@
     // Override point for customization after application launch.
     return YES;
 }
-							
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -41,6 +42,50 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(NSMutableArray *)takeANumberWithDeliLine:(NSMutableArray *)deliLine Name:(NSString *)nextCustomer {
+    NSMutableArray *newLine = deliLine;
+    [newLine addObject:nextCustomer];
+    NSString *customerPositionInLine;
+    NSUInteger lineNumber = [newLine count];
+    
+    customerPositionInLine = [NSString stringWithFormat:@"Hello, %@! You are number %lu in line.", nextCustomer, (unsigned long)lineNumber];
+    NSLog(@"%@", customerPositionInLine);
+    
+    return newLine;
+    
+}
+
+-(NSMutableArray *)nowServingWithDeliLine:(NSMutableArray *)deliLine {
+    NSString *emptyLine = @"There is nobody waiting to be served!";
+    if ([deliLine count] == 0) {
+        NSLog(@"%@", emptyLine);
+    }
+    else {
+        NSString *nextPerson = [deliLine objectAtIndex:0];
+        NSString *nextInLine = [NSString stringWithFormat:@"Now serving %@", nextPerson];
+        NSLog(@"%@",nextInLine);
+        [deliLine removeObjectAtIndex:0];
+    }
+    return deliLine;
+}
+
+-(NSString *)deliLine:(NSMutableArray *)currentLine {
+    if ([currentLine count] == 0) {
+        return @"The line is empty";
+    }
+    else {
+        NSString *listOfCustomersInLine = @"The line is currently: ";
+        NSInteger customerPostion = 1;
+        for (NSString *currentCustomer in currentLine) {
+            listOfCustomersInLine = [listOfCustomersInLine stringByAppendingString:[NSString stringWithFormat:@"%ld. %@ ", (long)customerPostion, currentCustomer]];
+            customerPostion++;
+        }
+        NSString *finalList = [listOfCustomersInLine substringToIndex:[listOfCustomersInLine length] - 1];
+        return [NSString stringWithFormat:@"%@", finalList];
+    }
+    
 }
 
 @end

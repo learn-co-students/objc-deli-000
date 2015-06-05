@@ -12,5 +12,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+//Example Method Signature
+//-(NSString *)badgeMaker:(NSString *)attendee;
+//possibly helpful for multiple params
+//- (id)initWithModel:(NSString *)aModel mileage:(double)theMileage;
+-(NSMutableArray *)takeANumberWithDeliLine:(NSMutableArray *)deliLine Name:(NSString *)nextCustomer;
+-(NSMutableArray *)nowServingWithDeliLine:(NSMutableArray *)deliLine;
+-(NSString *)deliLine:(NSMutableArray *)currentLine;
 @end
