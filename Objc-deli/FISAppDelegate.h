@@ -12,5 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (NSMutableArray*) takeANumberWithDeliLine: (NSMutableArray*) deliLine Name: (NSString*) name;
+- (NSMutableArray*) nowServingWithDeliLine: (NSMutableArray*) deliLine;
+- (NSString*) deliLine: (NSMutableArray*) deliLine;
 
 @end

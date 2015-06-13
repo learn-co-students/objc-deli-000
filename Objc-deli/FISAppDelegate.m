@@ -10,6 +10,61 @@
 
 @implementation FISAppDelegate
 
+
+- (NSMutableArray*) takeANumberWithDeliLine: (NSMutableArray*) deliLine Name: (NSString*) name {
+    
+    [deliLine addObject:name];
+    return deliLine;
+}
+
+
+- (NSMutableArray*) nowServingWithDeliLine: (NSMutableArray*) deliLine {
+
+    // remove first person from the line
+if (deliLine.count>0 ) {
+    NSString* name = [deliLine objectAtIndex:0];
+    [deliLine removeObjectAtIndex:0];
+    NSLog(@"%@",name);
+} else {
+    NSLog(@"There is nobody waiting to be served!");
+}
+return deliLine;
+}
+
+
+
+
+
+- (NSString*) deliLine: (NSMutableArray*) deliLine {
+    if (deliLine.count>0 ) {
+        NSString * myString=[[NSString alloc]init];
+        NSInteger i = 0;
+        myString = [myString stringByAppendingString:@"The line is currently:"];
+        //    "The line is currently: 1. Ada 2. Al"
+        for (id name in deliLine) {
+            i = i + 1;
+            NSString* iAsString = [NSString stringWithFormat:@"%li", (long)i];
+            myString = [myString stringByAppendingString:@" "];
+            myString = [myString stringByAppendingString:iAsString];
+            myString = [myString stringByAppendingString:@". "];
+            myString = [myString stringByAppendingString:name];
+            
+        }
+        return myString;
+        
+    } else {
+        return @"The line is empty";
+    }
+
+}
+
+
+
+
+
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
