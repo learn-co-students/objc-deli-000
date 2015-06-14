@@ -43,4 +43,41 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (NSMutableArray *)takeANumberWithDeliLine:(NSMutableArray *)currentLine Name:(NSString *)newCustomer {
+    NSMutableArray *updatedLine = currentLine;
+    [updatedLine addObject:newCustomer];
+    NSInteger customerNumber = [updatedLine count] + 1;
+    NSLog(@"You are customer number %ld", customerNumber);
+
+    return updatedLine;
+}
+
+- (NSMutableArray *)nowServingWithDeliLine:(NSMutableArray *)deliLine {
+    if (!deliLine.count) {
+        NSLog(@"There is nobody waiting to be served!");
+    } else {
+        NSString *currentCustomer = deliLine[0];
+        [deliLine removeObject:currentCustomer];
+        NSLog(@"We are now serving %@!", currentCustomer);
+    }
+
+    return deliLine;
+}
+
+- (NSString *)deliLine:(NSMutableArray *)deliLine {
+    if (!deliLine.count) {
+        return @"The line is empty";
+    } else {
+        NSInteger count = 1;
+        NSString *currentLine = @"The line is currently:";
+        for (NSString *customer in deliLine) {
+            NSString *currentCustomer = [NSString stringWithFormat:@" %ld. %@", count, customer];
+            currentLine = [currentLine stringByAppendingString:currentCustomer];
+            count = count + 1;
+        }
+        return currentLine;
+    }
+
+}
+
 @end
