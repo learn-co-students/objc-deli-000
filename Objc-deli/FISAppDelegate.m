@@ -16,10 +16,42 @@
     return YES;
 }
 
-/*
- 
- *  Define your methods here!
- 
- */
+
+-(NSString *)stringWithDeliLine:(NSMutableArray *)deliLine{
+    
+    /* if line is empty */
+    if([deliLine count] == 0) {
+        
+        return @"The line is currently empty.";
+        
+    }
+    /* if line is not empty */
+    else {
+        
+        NSString *newString = @"The line is:";
+        NSInteger position = 0;
+        
+        for(id object in deliLine){
+            position += 1;
+            newString = [newString stringByAppendingFormat:@"\n%li. %@", position, object];
+        };
+
+        return newString;
+    }
+    
+};
+
+-(NSMutableArray *)addName:(NSString *)name toDeliLine:(NSMutableArray *)deliLine{
+    [deliLine addObject:name];
+    return deliLine;
+};
+
+-(NSString *)serveNextCustomerInDeliLine:(NSMutableArray *)deliLine{
+    NSString *nextPerson = [deliLine objectAtIndex:0];
+    [deliLine removeObjectAtIndex:0];
+    return nextPerson;
+};
+
+
 
 @end
