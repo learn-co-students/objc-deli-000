@@ -33,7 +33,6 @@ describe(@"FISAppDelegate", ^{
         it(@"returns an NSString object", ^{
             expect(deliString).to.beKindOf([NSString class]);
         });
-        
         it(@"returns the customers in line as a string", ^{
             expect(deliString).to.equal(@"The line is:\n1. Anita\n2. Alan\n3. Ada\n4. Aaron\n5. Alan");
         });
