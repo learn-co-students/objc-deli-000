@@ -13,9 +13,14 @@
 @property (strong, nonatomic) UIWindow *window;
 
 /*
- 
- *  Declare your methods here!
- 
+ stringWithDeliLine: should accept an NSMutableArray argument deliLine and return an NSString object.
+ addName:toDeliLine: should accept an NSString called name and an NSMutableArray called deliLine as arguments, and return an NSMutableArray.
+ serveNextCustomerInDeliLine: should accept an NSMutableArray called deliLine as an argument and return an NSString.
+
  */
+
+-(NSString *)stringWithDeliLine:(NSMutableArray *)deliLine;
+-(NSMutableArray *)addName:(NSString *)name toDeliLine:(NSMutableArray *)deliLine;
+-(NSString *)serveNextCustomerInDeliLine:(NSMutableArray *)deliLine;
 
 @end
