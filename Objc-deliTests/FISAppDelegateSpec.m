@@ -27,7 +27,7 @@ describe(@"FISAppDelegate", ^{
     
     beforeEach(^{
         appDelegate = [[FISAppDelegate alloc] init];
-        deliLine = [[NSMutableArray alloc] initWithArray:@[@"Anita", @"Alan", @"Ada", @"Aaron", @"Alan"] ];
+        deliLine = [[NSMutableArray alloc] initWithArray:@[@"Anita",@"Alan",@"Ada",@"Aaron",@"Alan"] ];
       deliLine2 = [[NSMutableArray alloc] initWithArray:@[@"Joe",@"Mark"]];
         deliString = [appDelegate stringWithDeliLine:deliLine];
         deliString2 = [appDelegate stringWithDeliLine:deliLine2];

@@ -12,7 +12,6 @@
 		44E469BA18A06414009EE9AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E469B918A06414009EE9AA /* UIKit.framework */; };
 		44E469C018A06414009EE9AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44E469BE18A06414009EE9AA /* InfoPlist.strings */; };
 		44E469C218A06414009EE9AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E469C118A06414009EE9AA /* main.m */; };
-		44E469C618A06414009EE9AA /* FISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E469C518A06414009EE9AA /* FISAppDelegate.m */; };
 		44E469C918A06414009EE9AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E469C718A06414009EE9AA /* Main.storyboard */; };
 		44E469CE18A06414009EE9AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E469CD18A06414009EE9AA /* Images.xcassets */; };
 		44E469D518A06414009EE9AA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E469D418A06414009EE9AA /* XCTest.framework */; };
@@ -21,6 +20,7 @@
 		44E469DF18A06414009EE9AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44E469DD18A06414009EE9AA /* InfoPlist.strings */; };
 		810B65CDAFED4171B4F6824D /* libPods-Objc-deliTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E0D34E60DD48D3A5665168 /* libPods-Objc-deliTests.a */; };
 		D847801B19374CA5005FEBA5 /* FISAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D847801A19374CA5005FEBA5 /* FISAppDelegateSpec.m */; };
+		F6E4987E1B8AE6C200350179 /* FISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E4987D1B8AE6C200350179 /* FISAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,6 @@
 		44E469C118A06414009EE9AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		44E469C318A06414009EE9AA /* Objc-deli-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-deli-Prefix.pch"; sourceTree = "<group>"; };
 		44E469C418A06414009EE9AA /* FISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISAppDelegate.h; sourceTree = "<group>"; };
-		44E469C518A06414009EE9AA /* FISAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISAppDelegate.m; sourceTree = "<group>"; };
 		44E469C818A06414009EE9AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44E469CD18A06414009EE9AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		44E469D318A06414009EE9AA /* Objc-deliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Objc-deliTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +53,7 @@
 		6290DE98E6370C37D028B506 /* Pods-Objc-deliTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objc-deliTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Objc-deliTests/Pods-Objc-deliTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4E0D34E60DD48D3A5665168 /* libPods-Objc-deliTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Objc-deliTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D847801A19374CA5005FEBA5 /* FISAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISAppDelegateSpec.m; sourceTree = "<group>"; };
+		F6E4987D1B8AE6C200350179 /* FISAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				44E469C418A06414009EE9AA /* FISAppDelegate.h */,
-				44E469C518A06414009EE9AA /* FISAppDelegate.m */,
 				44E469C718A06414009EE9AA /* Main.storyboard */,
+				F6E4987D1B8AE6C200350179 /* FISAppDelegate.m */,
 				44E469CD18A06414009EE9AA /* Images.xcassets */,
 				44E469BC18A06414009EE9AA /* Supporting Files */,
 			);
@@ -295,8 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44E469C618A06414009EE9AA /* FISAppDelegate.m in Sources */,
 				44E469C218A06414009EE9AA /* main.m in Sources */,
+				F6E4987E1B8AE6C200350179 /* FISAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
