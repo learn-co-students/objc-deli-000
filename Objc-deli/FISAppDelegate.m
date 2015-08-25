@@ -50,20 +50,10 @@ return fullNumberName;
 
 -(NSString *)serveNextCustomerInDeliLine:(NSMutableArray *)deliLine {
     
- //   NSMutableArray *serveLine = [NSMutableArray new];
-//    NSString *subName=@"";
-    
-    
- //   for (NSInteger i=0; i<[deliLine count]; i++) {
         
         NSString *subName = [deliLine objectAtIndex:0];
         [deliLine removeObjectAtIndex:0];
         return subName;
-  
-    
- //   }
-    
- //return subName;
     
 }
 
